@@ -1,0 +1,20 @@
+<div class="container">
+    <mat-nav-list>
+        <mat-list-item [routerLink]="['/menu']">
+            <mat-icon matListIcon>account_balance</mat-icon>
+            <a matLine>Panel sterowania</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/lessons']">
+            <mat-icon matListIcon>account_balance</mat-icon>
+            <a matLine>Lekcje</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/profile']">
+            <mat-icon matListIcon>account_balance</mat-icon>
+            <a matLine>Profil</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/auth']" (click)="onLogout()">
+            <mat-icon matListIcon>account_balance</mat-icon>
+            <a matLine>Wyloguj</a>
+        </mat-list-item>
+    </mat-nav-list>
+</div>

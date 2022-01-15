@@ -1,0 +1,11 @@
+<div [formGroup]="form" class="form">
+    <mat-label>Wybierz języki programowania według, których sortować</mat-label>
+    <ul class="form__items">
+        <li *ngFor="let name of names">
+            <mat-checkbox [formControlName]="name">
+                {{ name }}
+            </mat-checkbox>
+        </li>
+    </ul>
+    <mat-divider inset></mat-divider>
+</div>

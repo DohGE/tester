@@ -1,0 +1,31 @@
+<mat-card class="container">
+    <mat-card-title-group class="container__title">
+        <mat-card-title>Profil</mat-card-title>
+        <mat-divider inset></mat-divider>
+        <h3>Imię: {{ user?.name }}</h3>
+        <h3>Nazwisko: {{ user?.surename }}</h3>
+        <h3 *ngIf="user?.schoolClass">Klasa: {{ user?.schoolClass }}</h3>
+        <mat-divider inset></mat-divider>
+    </mat-card-title-group>
+    <mat-card-content class="container__content">
+        <div class="container__content--items">
+            <h2>Ukończone lekcje:</h2>
+            <ul *ngIf="user?.doneLessons">
+                <li *ngFor="let doneLesson of user?.doneLessons">
+                    <p>Nazwa lekcji: {{ doneLesson.name }}</p>
+                    <p>
+                        Ilość otrzymanych punktów:
+                        {{ doneLesson.userPoints }} na wszystkich
+                        {{ doneLesson.allPoints }}
+                    </p>
+                </li>
+            </ul>
+            <h3 *ngIf="!user?.doneLessons">Nie ukończyłeś żadnej lekcji!</h3>
+        </div>
+        <mat-card-actions class="container__content--btn">
+            <mat-divider inset></mat-divider>
+            <button mat-button (click)="onChangePassword()">Zmień hasło</button>
+            <button mat-button [routerLink]="['']">Menu</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

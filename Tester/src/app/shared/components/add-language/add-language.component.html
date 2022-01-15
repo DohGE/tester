@@ -1,0 +1,11 @@
+<div [formGroup]="form" class="form">
+    <mat-label>Wybierz języki programowania</mat-label>
+    <ul class="form__items">
+        <li *ngFor="let name of names">
+            <mat-checkbox formControlName="{{ name }}">
+                {{ name }}
+            </mat-checkbox>
+        </li>
+    </ul>
+    <mat-error *ngIf="error && form.invalid"> Uzupełnij pole! </mat-error>
+</div>

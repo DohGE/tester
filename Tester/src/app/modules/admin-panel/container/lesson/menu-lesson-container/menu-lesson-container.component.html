@@ -1,0 +1,5 @@
+<app-menu-lesson-presenter
+    [lessons]="lessons$ | async"
+    [schoolClasses]="schoolClasses | async"
+    (addLessonToSchoolClass)="onAddLessonToSchoolClass($event)"
+></app-menu-lesson-presenter>

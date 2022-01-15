@@ -1,0 +1,20 @@
+<div class="container">
+    <iframe class="container__iframe" #iframe></iframe>
+    <div
+        class="container__btns"
+        *ngFor="let exercise of activeLesson.exercises"
+    >
+        <h2>Zadania do lekcji</h2>
+        <div class="container__btns--item">
+            <span>{{ exercise.name }}</span>
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="onStartExercise(exercise)"
+                [routerLink]="['/editor']"
+            >
+                Rozpocznij
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<mat-form-field appearance="fill">
+    <mat-label>Sortuj według</mat-label>
+    <mat-select [formControl]="select">
+        <mat-option>-- Wybierz klasę --</mat-option>
+        <mat-optgroup
+            *ngFor="let schoolClass of schoolClasses"
+            [label]="schoolClass.schoolClassesNumber"
+        >
+            <mat-option
+                *ngFor="let class of schoolClass.schoolClasses"
+                [value]="class"
+            >
+                {{ class }}
+            </mat-option>
+        </mat-optgroup>
+    </mat-select>
+</mat-form-field>

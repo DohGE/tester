@@ -1,0 +1,20 @@
+<div class="container">
+    <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="onBack()"
+        class="container__back"
+    >
+        Powrót
+    </button>
+    <ng-content></ng-content>
+    <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="onAddToSchoolClass()"
+    >
+        Dodaj do klasy
+    </button>
+</div>

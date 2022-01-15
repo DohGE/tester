@@ -1,0 +1,55 @@
+<ng-content></ng-content>
+<mat-table [dataSource]="exercises" matSort class="table">
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Nazwa zadania</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="language">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+            >Języki</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">
+            <div class="table__languages">
+                <div>
+                    <span
+                        class="table__languages--spacer"
+                        *ngFor="let lang of element.language | keyvalue"
+                        >{{ lang.key }}</span
+                    >
+                </div>
+                <div>
+                    <button
+                        mat-raised-button
+                        color="accent"
+                        type="button"
+                        (click)="onInfo(element)"
+                        [ngStyle]="{
+                            marginRight: addExerciseBtn ? '20px' : '0'
+                        }"
+                    >
+                        Informacje
+                    </button>
+                    <button
+                        mat-raised-button
+                        color="accent"
+                        type="button"
+                        *ngIf="addExerciseBtn"
+                        (click)="onAddExercise(element)"
+                    >
+                        Dodaj do lekcji
+                    </button>
+                </div>
+            </div>
+        </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
+<app-exercise-info
+    *ngIf="info"
+    [exerciseInfo]="exerciseInfo"
+    (back)="info = false"
+    [solution]="true"
+></app-exercise-info>

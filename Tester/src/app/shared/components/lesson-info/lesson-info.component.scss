@@ -1,0 +1,45 @@
+@import "../../utilities/variables/colors";
+@import "../../utilities/classes/container.scss";
+
+:host {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $BGwithOpacity;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    &__table {
+        height: 30%;
+    }
+    &__lang {
+        margin-left: 20px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &--description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            max-height: 50%;
+        }
+    }
+    &__back {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}

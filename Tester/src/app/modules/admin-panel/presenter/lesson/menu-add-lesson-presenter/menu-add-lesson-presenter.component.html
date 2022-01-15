@@ -1,0 +1,68 @@
+<div class="container">
+    <editor id="editor" class="container__editor" [init]="init"> </editor>
+    <div class="container__btns">
+        <button mat-raised-button color="primary" (click)="example = true">
+            Przykład lekcji
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="addExerciseBoolean = true"
+        >
+            Dodaj zadania
+        </button>
+        <button mat-raised-button color="primary" (click)="info = true">
+            Uzupełnij informacje
+        </button>
+        <button mat-raised-button color="primary" (click)="onAddLesson()">
+            Zapisz lekcje
+        </button>
+    </div>
+</div>
+<app-example
+    *ngIf="example"
+    (back)="example = false"
+    [exampleSrc]="exampleSrc"
+    [exampleAlt]="exampleAlt"
+></app-example>
+<div class="host" *ngIf="addExerciseBoolean">
+    <div class="container container__relative">
+        <button
+            mat-raised-button
+            color="accent"
+            type="button"
+            (click)="addExerciseBoolean = false"
+            class="host__back"
+        >
+            Powrót
+        </button>
+        <app-language-sorting
+            [exercises]="exercises"
+            (sortedData)="exercisesFilteredCollection = $event"
+        ></app-language-sorting>
+        <app-exercise-table
+            [exercises]="exercisesFilteredCollection"
+            [addExerciseBtn]="true"
+            (addExercise)="onAddExercise($event)"
+        ></app-exercise-table>
+    </div>
+</div>
+<div class="host" *ngIf="info">
+    <div class="container container__relative container__size">
+        <app-add-language
+            (languages)="language = $event"
+            [error]="error"
+            [clear]="clear"
+        ></app-add-language>
+        <mat-form-field appearance="fill">
+            <mat-label>Podaj nazwę lekcji</mat-label>
+            <input matInput [formControl]="name" placeholder="Nazwa lekcji" />
+            <mat-error *ngIf="name?.errors?.required && error">
+                Uzupełnij pole!
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onBack()">
+            Zapisz
+        </button>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="container__add">
+        <h1>Wybierz plik z rozszerzeniem CSV</h1>
+        <div class="container__add--form" [formGroup]="form">
+            <div>
+                <input
+                    type="file"
+                    formControlName="file"
+                    multiple
+                    (change)="onChange($event)"
+                />
+                <mat-error *ngIf="error && form.controls.file?.invalid">
+                    Wybierz plik!
+                </mat-error>
+            </div>
+            <mat-form-field appearance="fill">
+                <mat-label>Podaj klasę</mat-label>
+                <input
+                    matInput
+                    formControlName="schoolClass"
+                    placeholder="Klasa"
+                />
+                <mat-error *ngIf="error && form.controls.schoolClass?.invalid">
+                    Uzupełnij pole!
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="container__add--btns">
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="onAdd()"
+                class="container__add--btns-item"
+            >
+                Stwórz użytkowników
+            </button>
+            <button mat-raised-button color="primary" (click)="onDownload()">
+                Pobierz użytkowników
+            </button>
+        </div>
+        <mat-divider class="horizontal"></mat-divider>
+    </div>
+    <div class="container__users">
+        <table
+            mat-table
+            matSort
+            class="container__users--table"
+            [dataSource]="newUsers"
+            *ngIf="newUsers.length"
+        >
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header
+                    >Imię</mat-header-cell
+                >
+                <mat-cell *matCellDef="let element">{{
+                    element.name
+                }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="surename">
+                <mat-header-cell *matHeaderCellDef mat-sort-header
+                    >Nazwisko</mat-header-cell
+                >
+                <mat-cell *matCellDef="let element">
+                    {{ element.surename }}</mat-cell
+                >
+            </ng-container>
+            <ng-container matColumnDef="login">
+                <mat-header-cell *matHeaderCellDef mat-sort-header
+                    >Login</mat-header-cell
+                >
+                <mat-cell *matCellDef="let element">
+                    {{ element.login }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="password">
+                <mat-header-cell *matHeaderCellDef mat-sort-header
+                    >Hasło</mat-header-cell
+                >
+                <mat-cell *matCellDef="let element">
+                    {{ element.password }}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="schoolClass">
+                <mat-header-cell *matHeaderCellDef mat-sort-header
+                    >Klasa</mat-header-cell
+                >
+                <mat-cell *matCellDef="let element">
+                    {{ element.schoolClass }}
+                </mat-cell>
+            </ng-container>
+            <mat-header-row
+                *matHeaderRowDef="displayedColumns"
+            ></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="navbar">
+    <button mat-raised-button color="primary" (click)="generateZip()">
+        Pobierz swój kod
+    </button>
+    <button mat-raised-button color="primary" (click)="hide = !hide">
+        {{ hide ? "Schowaj edytory" : "Pokaż edytory" }}
+    </button>
+    <button mat-raised-button color="primary" (click)="onSaveExerciseResult()">
+        Wyślij zadanie
+    </button>
+    <button mat-raised-button color="primary" (click)="showExercise = true">
+        Pokaż zadanie
+    </button>
+</div>
+<div class="editor" *ngIf="hide">
+    <div class="editor__item">
+        <h3 class="editor__item--title" (click)="changeSize($event)">HTML</h3>
+        <ngx-codemirror
+            #codeEditorHTML
+            [(ngModel)]="htmlString"
+            [options]="html"
+            class="border"
+            (keyup)="runCode()"
+        >
+        </ngx-codemirror>
+        <mat-divider vertical class="vertical"></mat-divider>
+    </div>
+    <div class="editor__item">
+        <h3 class="editor__item--title" (click)="changeSize($event)">CSS</h3>
+        <ngx-codemirror
+            #codeEditorCSS
+            [options]="css"
+            class="border"
+            (keyup)="runCode()"
+        >
+        </ngx-codemirror>
+        <mat-divider vertical class="vertical"></mat-divider>
+    </div>
+    <div class="editor__item">
+        <h3 class="editor__item--title" (click)="changeSize($event)">
+            JavaScript
+        </h3>
+        <ngx-codemirror #codeEditorJS [options]="js" (keyup)="runCode()">
+        </ngx-codemirror>
+    </div>
+</div>
+<mat-divider class="horizontal"></mat-divider>
+<div class="run">
+    <iframe #iframe class="run__code"></iframe>
+</div>
+<app-exercise-info
+    *ngIf="showExercise"
+    [solution]="false"
+    (back)="showExercise = false"
+></app-exercise-info>

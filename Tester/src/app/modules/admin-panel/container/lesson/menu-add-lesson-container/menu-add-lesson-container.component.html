@@ -1,0 +1,5 @@
+<app-menu-add-lesson-presenter
+    [exercises]="exercises | async"
+    (addLesson)="onAddLesson($event)"
+    (addExercise)="onAddExercise($event)"
+></app-menu-add-lesson-presenter>

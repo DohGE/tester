@@ -1,0 +1,28 @@
+@import "../../../shared/utilities/variables/colors";
+@import "../../../shared/utilities/classes/container";
+
+:host {
+    background-color: $BGwithOpacity;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 40%;
+    height: 40%;
+    &__back {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}
