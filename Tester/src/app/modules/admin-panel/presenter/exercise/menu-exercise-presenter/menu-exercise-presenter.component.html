@@ -1,8 +1,8 @@
 <div class="container">
-    <app-language-sorting
-        [exercises]="exercises"
-        (sortedData)="exercisesFilteredCollection = $event"
-    ></app-language-sorting>
-    <app-exercise-table [exercises]="exercisesFilteredCollection">
-    </app-exercise-table>
+  <app-language-sorting
+    [exercises]="exercises"
+    (sortedData)="exercisesFilteredCollection = $event"
+  ></app-language-sorting>
+  <app-exercise-table [exercises]="exercisesFilteredCollection">
+  </app-exercise-table>
 </div>

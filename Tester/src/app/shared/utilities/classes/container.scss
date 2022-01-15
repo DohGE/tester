@@ -1,12 +1,12 @@
 @import "../variables/colors.scss";
 
 .container {
-    background-color: $BGcomponent;
-    width: 80%;
-    height: 80%;
-    border: $border;
-    border-radius: $radius;
-    box-shadow: $box-shadow;
-    display: flex;
-    padding: 10px;
+  background-color: $BGcomponent;
+  width: 80%;
+  height: 80%;
+  border: $border;
+  border-radius: $radius;
+  box-shadow: $box-shadow;
+  display: flex;
+  padding: 10px;
 }

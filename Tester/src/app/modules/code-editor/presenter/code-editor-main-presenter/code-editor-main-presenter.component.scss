@@ -1,75 +1,75 @@
 :host {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 .navbar {
-    width: 100%;
-    height: 100px !important;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  height: 100px !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .editor {
-    width: 100%;
-    height: 90%;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  &__item {
     display: flex;
-    &__item {
-        display: flex;
-        width: 40%;
-        flex: 1;
-        height: 100%;
-        position: relative;
-        &--title {
-            position: absolute;
-            right: 10px;
-            top: 5px;
-            z-index: 10;
-            border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.288);
-            padding: 0 5px;
-            &:hover {
-                cursor: pointer;
-            }
-        }
+    width: 40%;
+    flex: 1;
+    height: 100%;
+    position: relative;
+    &--title {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      z-index: 10;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.288);
+      padding: 0 5px;
+      &:hover {
+        cursor: pointer;
+      }
     }
+  }
 }
 
 .minimalize {
-    max-width: 150px;
-    &__background {
-        background-color: #fff;
-    }
+  max-width: 150px;
+  &__background {
+    background-color: #fff;
+  }
 }
 
 .vertical {
-    height: 100%;
-    border-right: 3px solid gray;
-    z-index: 10;
+  height: 100%;
+  border-right: 3px solid gray;
+  z-index: 10;
 }
 
 .horizontal {
-    width: 100%;
-    border-top: 3px solid gray;
-    margin: 20px 0;
+  width: 100%;
+  border-top: 3px solid gray;
+  margin: 20px 0;
 }
 
 .run {
+  width: 100%;
+  height: 100%;
+  &__code {
     width: 100%;
     height: 100%;
-    &__code {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
+    border: none;
+  }
 }
 
 ::ng-deep .CodeMirror,
 ngx-codemirror {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }

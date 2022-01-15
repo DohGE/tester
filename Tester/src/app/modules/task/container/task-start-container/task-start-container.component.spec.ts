@@ -8,9 +8,8 @@ describe('TaskStartContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TaskStartContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [TaskStartContainerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

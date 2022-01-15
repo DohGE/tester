@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~codemirror/lib/codemirror.css";
+@import "~codemirror/theme/idea.css";
+@import "~codemirror/addon/fold/foldgutter.css";
+@import "~codemirror/addon/lint/lint.css";
+@import "codemirror/theme/dracula.css";
+@import "~codemirror/addon/dialog/dialog.css";
+@import "~codemirror/theme/material.css";
+@import "~codemirror/addon/hint/show-hint.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~ngx-toastr/toastr";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

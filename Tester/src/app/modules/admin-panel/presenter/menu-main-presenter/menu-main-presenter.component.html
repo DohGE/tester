@@ -1,45 +1,45 @@
 <mat-drawer-container class="container" autosize>
-    <mat-drawer
-        class="sidenav"
-        mode="side"
-        opened
-        (mouseenter)="onToggleMenu()"
-        (mouseleave)="onToggleMenu()"
-    >
-        <mat-nav-list>
-            <div>
-                <mat-list-item [routerLink]="['']">
-                    <mat-icon matListIcon>home</mat-icon>
-                    <a matLine *ngIf="expanded">Strona główna</a>
-                </mat-list-item>
-                <mat-list-item [routerLink]="['exercises']">
-                    <mat-icon matListIcon>assignment</mat-icon>
-                    <a matLine *ngIf="expanded">Aktualne zadania</a>
-                </mat-list-item>
-                <mat-list-item [routerLink]="['/menu']">
-                    <mat-icon matListIcon>event_note</mat-icon>
-                    <a matLine *ngIf="expanded">Aktualne lekcje</a>
-                </mat-list-item>
-                <mat-list-item [routerLink]="['users']">
-                    <mat-icon matListIcon>people</mat-icon>
-                    <a matLine *ngIf="expanded">Aktualni użytkownicy</a>
-                </mat-list-item>
-                <mat-list-item [routerLink]="['addExercises']">
-                    <mat-icon matListIcon>library_add</mat-icon>
-                    <a matLine *ngIf="expanded">Stwórz zadanie</a>
-                </mat-list-item>
-                <mat-list-item [routerLink]="['addLessons']">
-                    <mat-icon matListIcon>event_available</mat-icon>
-                    <a matLine *ngIf="expanded">Stwórz lekcje</a>
-                </mat-list-item>
-                <mat-list-item [routerLink]="['addUsers']">
-                    <mat-icon matListIcon>person_add</mat-icon>
-                    <a matLine *ngIf="expanded">Stwórz użytkowników</a>
-                </mat-list-item>
-            </div>
-        </mat-nav-list>
-    </mat-drawer>
-    <div class="sidenav-content">
-        <router-outlet></router-outlet>
-    </div>
+  <mat-drawer
+    class="sidenav"
+    mode="side"
+    opened
+    (mouseenter)="onToggleMenu()"
+    (mouseleave)="onToggleMenu()"
+  >
+    <mat-nav-list>
+      <div>
+        <mat-list-item [routerLink]="['']">
+          <mat-icon matListIcon>home</mat-icon>
+          <a matLine *ngIf="expanded">Strona główna</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['exercises']">
+          <mat-icon matListIcon>assignment</mat-icon>
+          <a matLine *ngIf="expanded">Aktualne zadania</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/menu']">
+          <mat-icon matListIcon>event_note</mat-icon>
+          <a matLine *ngIf="expanded">Aktualne lekcje</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['users']">
+          <mat-icon matListIcon>people</mat-icon>
+          <a matLine *ngIf="expanded">Aktualni użytkownicy</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['addExercises']">
+          <mat-icon matListIcon>library_add</mat-icon>
+          <a matLine *ngIf="expanded">Stwórz zadanie</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['addLessons']">
+          <mat-icon matListIcon>event_available</mat-icon>
+          <a matLine *ngIf="expanded">Stwórz lekcje</a>
+        </mat-list-item>
+        <mat-list-item [routerLink]="['addUsers']">
+          <mat-icon matListIcon>person_add</mat-icon>
+          <a matLine *ngIf="expanded">Stwórz użytkowników</a>
+        </mat-list-item>
+      </div>
+    </mat-nav-list>
+  </mat-drawer>
+  <div class="sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-drawer-container>

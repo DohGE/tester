@@ -1,36 +1,28 @@
 <div class="container">
-    <app-school-class-sorting-input
-        [schoolClasses]="schoolClasses"
-        (onChange)="sortingValue = $event"
-    ></app-school-class-sorting-input>
-    <mat-table
-        [dataSource]="schoolUsers | sorting: sortingValue"
-        matSort
-        class="table"
-    >
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-                >Imię</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="surename">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-                >Nazwisko</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">
-                {{ element.surename }}</mat-cell
-            >
-        </ng-container>
-        <ng-container matColumnDef="schoolClass">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-                >Klasa</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">
-                {{ element.schoolClass }}</mat-cell
-            >
-        </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
+  <app-school-class-sorting-input
+    [schoolClasses]="schoolClasses"
+    (onChange)="sortingValue = $event"
+  ></app-school-class-sorting-input>
+  <mat-table
+    [dataSource]="schoolUsers | sorting: sortingValue"
+    matSort
+    class="table"
+  >
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Imię</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="surename">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Nazwisko</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element"> {{ element.surename }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="schoolClass">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Klasa</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.schoolClass }}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
 </div>

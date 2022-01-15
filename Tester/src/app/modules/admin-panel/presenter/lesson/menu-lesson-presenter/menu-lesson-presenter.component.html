@@ -1,56 +1,56 @@
 <div class="container">
-    <app-language-sorting
-        [exercises]="lessons"
-        (sortedData)="lessonsFilteredCollection = $event"
-    ></app-language-sorting>
-    <mat-table [dataSource]="lessonsFilteredCollection" matSort class="table">
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-                >Nazwa lekcji</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="date">
-            <mat-header-cell *matHeaderCellDef mat-sort-header
-                >Data utworzenia</mat-header-cell
-            >
-            <mat-cell *matCellDef="let element">
-                <span>{{ element.date }}</span>
-                <button
-                    class="table__btn"
-                    mat-raised-button
-                    color="primary"
-                    (click)="onInfo(element)"
-                >
-                    Informacje
-                </button>
-                <button
-                    class="table__btn"
-                    mat-raised-button
-                    color="primary"
-                    (click)="onSchoolClass(element)"
-                >
-                    Dodaj do klasy
-                </button></mat-cell
-            >
-        </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
+  <app-language-sorting
+    [exercises]="lessons"
+    (sortedData)="lessonsFilteredCollection = $event"
+  ></app-language-sorting>
+  <mat-table [dataSource]="lessonsFilteredCollection" matSort class="table">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Nazwa lekcji</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >Data utworzenia</mat-header-cell
+      >
+      <mat-cell *matCellDef="let element">
+        <span>{{ element.date }}</span>
+        <button
+          class="table__btn"
+          mat-raised-button
+          color="primary"
+          (click)="onInfo(element)"
+        >
+          Informacje
+        </button>
+        <button
+          class="table__btn"
+          mat-raised-button
+          color="primary"
+          (click)="onSchoolClass(element)"
+        >
+          Dodaj do klasy
+        </button></mat-cell
+      >
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
 </div>
 <app-lesson-info
-    *ngIf="info"
-    [lessonInfo]="lessonInfo"
-    (back)="info = false"
+  *ngIf="info"
+  [lessonInfo]="lessonInfo"
+  (back)="info = false"
 ></app-lesson-info>
 <app-add-lesson-to-school-class
-    *ngIf="schoolClass"
-    (back)="onBack()"
-    [sortingValue]="sortingValue"
-    (addToSchoolClass)="onAddLessonToSchoolClass()"
+  *ngIf="schoolClass"
+  (back)="onBack()"
+  [sortingValue]="sortingValue"
+  (addToSchoolClass)="onAddLessonToSchoolClass()"
 >
-    <app-school-class-sorting-input
-        [schoolClasses]="schoolClasses"
-        (onChange)="sortingValue = $event"
-    ></app-school-class-sorting-input
+  <app-school-class-sorting-input
+    [schoolClasses]="schoolClasses"
+    (onChange)="sortingValue = $event"
+  ></app-school-class-sorting-input
 ></app-add-lesson-to-school-class>

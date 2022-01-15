@@ -1,22 +1,22 @@
 @import "../../utilities/variables/colors";
 
 :host {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.459);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.459);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
 }
 
 img {
-    width: 500px;
-    height: 500px;
-    padding: 20px;
-    border-radius: $radius;
-    border: $border;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  border-radius: $radius;
+  border: $border;
 }

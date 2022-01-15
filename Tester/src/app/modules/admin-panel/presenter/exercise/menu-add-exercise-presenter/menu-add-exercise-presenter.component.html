@@ -1,70 +1,58 @@
 <div class="container">
-    <form [formGroup]="form" class="form">
-        <app-add-language
-            (languages)="language = $event"
-            [clear]="clear"
-            [error]="error"
-        ></app-add-language>
-        <mat-form-field appearance="fill" class="form__item">
-            <mat-label>Podaj tytuł zadania</mat-label>
-            <input
-                matInput
-                formControlName="name"
-                placeholder="Tytuł zadania"
-            />
-            <mat-error *ngIf="error && form.controls.name?.errors?.required">
-                Uzupełnij pole!
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="form__item">
-            <mat-label>Podaj treść zadania</mat-label>
-            <textarea
-                matInput
-                formControlName="description"
-                placeholder="Treść zadania"
-            ></textarea>
-            <mat-error
-                *ngIf="error && form.controls.description?.errors?.required"
-            >
-                Uzupełnij pole!
-            </mat-error>
-            <mat-error
-                *ngIf="error && form.controls.description?.errors?.minlength"
-            >
-                Minimalna długość 10 znaków!
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="form__item">
-            <mat-label>Podaj treść rozwiązania według wzoru</mat-label>
-            <textarea
-                matInput
-                formControlName="solution"
-                placeholder="Treść rozwiązania"
-            ></textarea>
-            <mat-error
-                *ngIf="error && form.controls.solution?.errors?.required"
-            >
-                Uzupełnij pole!
-            </mat-error>
-            <mat-error
-                *ngIf="error && form.controls.solution?.errors?.minlength"
-            >
-                Minimalna długość 10 znaków!
-            </mat-error>
-        </mat-form-field>
-        <div class="form__btns">
-            <button mat-raised-button color="primary" (click)="example = true">
-                Pokaż wzór
-            </button>
-            <button mat-raised-button color="primary" (click)="onSave()">
-                Zapisz zadanie
-            </button>
-        </div>
-    </form>
+  <form [formGroup]="form" class="form">
+    <app-add-language
+      (languages)="language = $event"
+      [clear]="clear"
+      [error]="error"
+    ></app-add-language>
+    <mat-form-field appearance="fill" class="form__item">
+      <mat-label>Podaj tytuł zadania</mat-label>
+      <input matInput formControlName="name" placeholder="Tytuł zadania" />
+      <mat-error *ngIf="error && form.controls.name?.errors?.required">
+        Uzupełnij pole!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form__item">
+      <mat-label>Podaj treść zadania</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        placeholder="Treść zadania"
+      ></textarea>
+      <mat-error *ngIf="error && form.controls.description?.errors?.required">
+        Uzupełnij pole!
+      </mat-error>
+      <mat-error *ngIf="error && form.controls.description?.errors?.minlength">
+        Minimalna długość 10 znaków!
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form__item">
+      <mat-label>Podaj treść rozwiązania według wzoru</mat-label>
+      <textarea
+        matInput
+        formControlName="solution"
+        placeholder="Treść rozwiązania"
+      ></textarea>
+      <mat-error *ngIf="error && form.controls.solution?.errors?.required">
+        Uzupełnij pole!
+      </mat-error>
+      <mat-error *ngIf="error && form.controls.solution?.errors?.minlength">
+        Minimalna długość 10 znaków!
+      </mat-error>
+    </mat-form-field>
+    <div class="form__btns">
+      <button mat-raised-button color="primary" (click)="example = true">
+        Pokaż wzór
+      </button>
+      <button mat-raised-button color="primary" (click)="onSave()">
+        Zapisz zadanie
+      </button>
+    </div>
+  </form>
 </div>
 <app-example
-    *ngIf="example"
-    (back)="example = false"
-    [exampleSrc]="exampleSrc"
-    [exampleAlt]="exampleAlt"
+  *ngIf="example"
+  (back)="example = false"
+  [exampleSrc]="exampleSrc"
+  [exampleAlt]="exampleAlt"
 ></app-example>

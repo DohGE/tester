@@ -1,4 +1,4 @@
 export interface SchoolClass {
-    schoolClassesNumber: string;
-    schoolClasses: string[];
+  schoolClassesNumber: string;
+  schoolClasses: string[];
 }

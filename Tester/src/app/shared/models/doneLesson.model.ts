@@ -1,6 +1,6 @@
 export interface DoneLesson {
-    name: string;
-    date: string;
-    userPoints: number;
-    allPoints: number;
+  name: string;
+  date: string;
+  userPoints: number;
+  allPoints: number;
 }

@@ -1,12 +1,12 @@
-import { createSelector } from "@ngrx/store";
-import * as fromAuth from "./auth-state/auth.reducer";
+import { createSelector } from '@ngrx/store';
+import * as fromAuth from './auth-state/auth.reducer';
 
 export const getError = createSelector(
-    fromAuth.getAuthState,
-    (state: fromAuth.authState) => state.error
+  fromAuth.getAuthState,
+  (state: fromAuth.authState) => state.error
 );
 
 export const getAuth = createSelector(
-    fromAuth.getAuthState,
-    (state: fromAuth.authState) => state.auth
+  fromAuth.getAuthState,
+  (state: fromAuth.authState) => state.auth
 );

@@ -1,19 +1,19 @@
 <div class="container">
-    <h1>Lekcje</h1>
-    <div class="container__lessons" *ngFor="let lesson of user?.lessonsToDo">
-        <h2 *ngIf="!user?.lessonsToDo.length">
-            Nie posiadasz żadnych lekcji do zrobienia
-        </h2>
-        <div class="container__lessons--item">
-            <span>{{ lesson.name }}</span>
-            <button
-                mat-raised-button
-                color="primary"
-                (click)="onStartLesson(lesson)"
-                [routerLink]="['start']"
-            >
-                Rozpocznij
-            </button>
-        </div>
+  <h1>Lekcje</h1>
+  <div class="container__lessons" *ngFor="let lesson of user?.lessonsToDo">
+    <h2 *ngIf="!user?.lessonsToDo.length">
+      Nie posiadasz żadnych lekcji do zrobienia
+    </h2>
+    <div class="container__lessons--item">
+      <span>{{ lesson.name }}</span>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onStartLesson(lesson)"
+        [routerLink]="['start']"
+      >
+        Rozpocznij
+      </button>
     </div>
+  </div>
 </div>

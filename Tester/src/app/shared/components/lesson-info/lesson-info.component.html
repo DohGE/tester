@@ -1,29 +1,29 @@
 <div class="container">
-    <button
-        mat-raised-button
-        color="accent"
-        type="button"
-        (click)="onBack()"
-        class="container__back"
-    >
-        Powrót
-    </button>
-    <div class="container__info">
-        <h1>Nazwa lekcji: {{ lessonInfo?.name }}</h1>
-        <h2>Data utworzenia: {{ lessonInfo?.date }}</h2>
-        <h2>Opis lekcji:</h2>
-        <div class="container__info--description">
-            <p>{{ lessonInfo?.description }}</p>
-        </div>
+  <button
+    mat-raised-button
+    color="accent"
+    type="button"
+    (click)="onBack()"
+    class="container__back"
+  >
+    Powrót
+  </button>
+  <div class="container__info">
+    <h1>Nazwa lekcji: {{ lessonInfo?.name }}</h1>
+    <h2>Data utworzenia: {{ lessonInfo?.date }}</h2>
+    <h2>Opis lekcji:</h2>
+    <div class="container__info--description">
+      <p>{{ lessonInfo?.description }}</p>
     </div>
-    <div></div>
-    <app-exercise-table [exercises]="exercises" class="container__table">
-        <h2>
-            Języki:
-            <span *ngFor="let lang of language" class="container__lang">{{
-                lang
-            }}</span>
-        </h2>
-        <h2>Zadania:</h2>
-    </app-exercise-table>
+  </div>
+  <div></div>
+  <app-exercise-table [exercises]="exercises" class="container__table">
+    <h2>
+      Języki:
+      <span *ngFor="let lang of language" class="container__lang">{{
+        lang
+      }}</span>
+    </h2>
+    <h2>Zadania:</h2>
+  </app-exercise-table>
 </div>

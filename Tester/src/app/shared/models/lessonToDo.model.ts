@@ -1,4 +1,4 @@
 export interface LessonToDo {
-    name: string;
-    date: string;
+  name: string;
+  date: string;
 }
